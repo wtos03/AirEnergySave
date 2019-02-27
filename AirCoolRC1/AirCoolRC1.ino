@@ -551,7 +551,7 @@ void getConfig(String str)
          airCoolFlag.tempChange = true;
       else
          airCoolFlag.tempChange = false;
-      prevtemp = airCoolFlag.setTmp;
+         prevtemp = airCoolFlag.setTmp;
 }
 
 
@@ -647,10 +647,12 @@ static bool toggle;
                    
                     if ( airCoolFlag.fanspeed  > 1 )
                       index +=  HIGHFAN;
-                    if (airCoolFlag.onoffFlag) // Mean change from on to off  Turn off Air Con       
-                    debugPrint ("Set temperature to   ");
-                    debugPrintln (STARTTEMP + index);
-                       sendCommand(index);
+                    if (airCoolFlag.onoffFlag) // Mean change from on to off  Turn off Air Con   
+                    { 
+                      debugPrint ("Set temperature to   ");
+                      debugPrintln (STARTTEMP + index);
+                      sendCommand(index);
+                    }
                 }
                     
  // Get new weather 
